@@ -68,9 +68,16 @@
       const speed = document.querySelector('.speed-value');
 
       // watch vs get, watch just watches over time and gives data as frequently as we need it
-      navigator.geolocation.watchPosition();
-
-
+      navigator.geolocation.watchPosition((data) => {
+          // data here shows us a geoposition, and inside that, a timestamp and coordinates
+          // heading - number of degrees relative to north that we are
+          // speed - how quickly in km/hour
+          console.log(data);
+          // update the speed
+          // can use Math.round to round to the nearst whole number:
+          
+          speed.textContent = Math.round(data.coords.speed);
+      });
 
 
 
