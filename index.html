@@ -75,8 +75,10 @@
           console.log(data);
           // update the speed
           // can use Math.round to round to the nearst whole number:
+          // speed.textContent = Math.round(data.coords.speed);
           
-          speed.textContent = Math.round(data.coords.speed);
+          // but I'll remove it here to keep the number with decimals - helpful to see
+          speed.textContent = data.coords.speed;
       });
 
 
