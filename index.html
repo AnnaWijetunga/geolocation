@@ -81,6 +81,10 @@
           speed.textContent = data.coords.speed;
           // tilts compass slightly, depending on user location
           arrow.style.transofrm = `rotate(${data.coords.heading}deg)`;
+      }, (err) => {
+          // in case someone doesn't grant you permission
+          console.err(err);
+          alert("Allow!");
       });
 
 
