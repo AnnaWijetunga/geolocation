@@ -76,9 +76,11 @@
           // update the speed
           // can use Math.round to round to the nearst whole number:
           // speed.textContent = Math.round(data.coords.speed);
-          
+
           // but I'll remove it here to keep the number with decimals - helpful to see
           speed.textContent = data.coords.speed;
+          // tilts compass slightly, depending on user location
+          arrow.style.transofrm = `rotate(${data.coords.heading}deg)`;
       });
 
 
